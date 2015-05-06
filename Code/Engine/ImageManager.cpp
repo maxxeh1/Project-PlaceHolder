@@ -9,17 +9,17 @@ ImageManager::ImageManager()
 
 }
 
-ImageManager::ImageManager()
+ImageManager::~ImageManager()
 {
 
 }
 
-void ImageManager::AddImage(sf::Image& image)
+void ImageManager::AddImage(sf::Texture& image)
 {
 	imageList.push_back(image);
 }
 
-sf::Image& ImageManager::GetImage(int index)
+sf::Texture& ImageManager::GetImage(int index)
 {
 	return imageList[index];
 }

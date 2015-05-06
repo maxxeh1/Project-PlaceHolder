@@ -8,15 +8,15 @@
 class ImageManager
 {
 	private:
-		std::vector<sf::Image> imageList;
+		std::vector<sf::Texture> imageList;
 
 	public:
 		ImageManager();
 		~ImageManager();
 
-		void AddImage(sf::Image& image);
+		void AddImage(sf::Texture& image);
 
-		sf::Image& GetImage(int index);
+		sf::Texture& GetImage(int index);
 };
 
 #endif

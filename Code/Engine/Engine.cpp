@@ -15,6 +15,7 @@ Engine::~Engine()
 bool Engine::Init()
 {
 	window = new sf::RenderWindow(sf::VideoMode(800, 600, 32), "RPG");
+	
 
 	if (!window)
 	{
@@ -22,13 +23,26 @@ bool Engine::Init()
 	}
 	else
 	{
+		LoadImages();
 		return true;
 	}
 }
 
 void Engine::RenderFrame()
 {
+	window->clear();
+	testTile->Draw(0, 0, window);
+	window->display();
+}
 
+void Engine::LoadImages()
+{
+	sf::Texture sprite;
+	sprite.loadFromFile("Monsters1.png");
+
+	imageManager.AddImage(sprite);
+
+	testTile = new Tile(imageManager.GetImage(0));
 }
 
 void Engine::ProcessInput()

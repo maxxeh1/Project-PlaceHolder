@@ -12,6 +12,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 	}
 	catch (char* e)
 	{
-		MessageBoxA(NULL, e, "Exception Occured", MB_OK);
+		MessageBoxA(NULL, e, "Exception Occured", MB_OK | MB_ICONERROR);
 	}
 }

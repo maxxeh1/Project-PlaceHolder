@@ -3,11 +3,20 @@
 
 #include <SFML\Graphics.hpp>
 
+#include "ImageManager.h"
+#include "Tile.h"
+
 class Engine
 {
 	private:
+		ImageManager imageManager;
+		Tile* testTile;
+
 		//SFML Render Window
 		sf::RenderWindow* window;
+
+		//Load the images
+		void LoadImages();
 		
 		//Initialise the engine
 		bool Init();
