@@ -1,5 +1,5 @@
 # RPG
-Max Atkins and Kyle Freer RPG Repo
+Project - Alpha
 
-First ideas for our RPG
-Hi
+
+©Copyright, Kyle Freer and Max Atkins, 2015
