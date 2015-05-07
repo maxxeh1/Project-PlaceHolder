@@ -72,7 +72,7 @@ void Camera::Update()
 	float vx, vy, v;
 
 	//Find X and Y
-	x = (float)(target.x - position.x);
+	x = (float)(target.x = position.x);
 	y = (float)(target.y = position.y);
 
 	//If within 1 pixel of target, snap to target and stay
