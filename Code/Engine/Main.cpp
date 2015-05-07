@@ -4,7 +4,7 @@
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
-	Engine* engine = new Engine();
+	Engine* engine = new Engine(640, 480, 32);
 
 	try
 	{

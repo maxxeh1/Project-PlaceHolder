@@ -5,6 +5,8 @@
 
 #include "ImageManager.h"
 #include "Tile.h"
+#include "Camera.h"
+#include "Level.h"
 
 class Engine
 {
@@ -14,6 +16,15 @@ class Engine
 
 		//SFML Render Window
 		sf::RenderWindow* window;
+
+		//Camera
+		Camera* camera;
+
+		//Current level
+		Level* currentLevel;
+
+		//Tile dimensions
+		int tileSize;
 
 		//Load the images
 		void LoadImages();
@@ -34,7 +45,7 @@ class Engine
 		void Update();
 
 	public:
-		Engine();
+		Engine(int w, int h, int tileSize);
 		~Engine();
 
 		//Start engine
