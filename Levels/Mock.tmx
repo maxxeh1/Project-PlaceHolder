@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="Terrain1" tilewidth="32" tileheight="32">
-  <image source="../Graphics/TileSets/Terrain1.png" width="640" height="640"/>
- </tileset>
- <tileset firstgid="401" name="Walls" tilewidth="32" tileheight="32">
-  <image source="../Graphics/TileSets/Walls.png" width="192" height="32"/>
- </tileset>
- <tileset firstgid="407" name="Monsters1" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Monsters1" tilewidth="32" tileheight="32">
   <image source="../Graphics/Sprites/Other/Monsters1.png" width="320" height="320"/>
  </tileset>
+ <tileset firstgid="101" name="Terrain-1" tilewidth="32" tileheight="32">
+  <image source="../Graphics/TileSets/Terrain-1.png" width="640" height="640"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="12" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxLZWBgSB1GOA2KydU70O4fahgAZbA41A==
+  </data>
+ </layer>
  <layer name="Tile Layer 5" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFgwEwomFs8sTqxWUGIf3kqAcACNQAEA==
+   eJxjYECAewykgdN48Ck86rEBWqoXJVL9KSQ+NdRvJVE9OiBV/UAAAG1VHJM=
   </data>
  </layer>
  <layer name="Tile Layer 2" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBg+gAWIWYGYjUj1EkDMCMRSQDwRyJgCxJMYiVc/iYB6LSDWBGJtJPVT8KgXA2JRIBYH4mlI5mOzgxEHxgUIyWNTTwwAAOS4CLs=
+   eJxjYBjcoA+Ie7Hgfhzqq4C4EguuHiLqFwLxIix4MQ71Aw0Ar/UVlQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 6" width="12" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAF9/BgfICQ/FAAp4D45BBWPxAAAHiEDT0=
   </data>
  </layer>
  <layer name="Tile Layer 3" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBg+YBEjA8NqRgibFQmz4dEDU8+IhKVwqF0GVTudkTj1MPM1GVCxNgF/iGLB2IAYDrXiONTbArEdFmyPQ70EEDNhwcj+BQC3fAfy
+   eJxjYBgFyKAPiHuBuJ9I9VVAXAnE1YNE/UIgXgTEi4lUTykAAC26B9s=
   </data>
  </layer>
  <layer name="Tile Layer 4" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFyGArI+3MlgBiKRLUawGxNgnqxYBYnIbqbYHYHk0MAGGKAhQ=
+   eJxjYKAMZABxJhachUN9DRCnYsF1FLqDkPtwuWcUUAYAf4gHDg==
+  </data>
+ </layer>
+ <layer name="Tile Layer 7" width="12" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBj+QHSgHTCMAQAezAAW
   </data>
  </layer>
 </map>
