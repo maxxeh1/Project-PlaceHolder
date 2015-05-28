@@ -1,17 +1,36 @@
-#include <Windows.h>
+#include <SFML\Graphics.hpp>
+#include <iostream>
+#include <string>
 
-#include "Engine.h"
-
-int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
+int main()
 {
-	Engine* engine = new Engine(640, 480, 32);
+	sf::RenderWindow window; 
+	sf::Vector2u windowSize(800, 600);
+	window.create(sf::VideoMode(windowSize.x, windowSize.y), "RPG", sf::Style::Default);
 
-	try
+	sf::Clock clock;
+	sf::Time time = sf::seconds(2);
+
+	
+
+	while (window.isOpen())
 	{
-		engine->Go();
-	}
-	catch (char* e)
-	{
-		MessageBoxA(NULL, e, "Exception Occured", MB_OK | MB_ICONERROR);
+		sf::Event evt;
+		while (window.pollEvent(evt))
+		{
+			if (evt.type == sf::Event::Closed)
+				window.close();
+		}
+
+		if (window.waitEvent(evt))
+		{
+			//Waits until an event happens
+			std::cout << "Event" << std::endl;
+		}
+
+		time = clock.getElapsedTime(); //Can be one line
+		clock.restart(); //Send up ^^^^^^
+
+		window.display();
 	}
 }
