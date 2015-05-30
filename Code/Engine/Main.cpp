@@ -20,6 +20,8 @@ int main()
 	sf::Clock clock;
 	sf::Time time = sf::seconds(2);
 
+	bool updateFrame = true;
+
 	std::string message = "Hello my name is Max";
 	std::string display = "";
 
@@ -38,7 +40,18 @@ int main()
 	playerSprite.setTexture(playerTexture);
 	playerSprite.setPosition(0, 0);
 
+	//Checks controller connection before the game loop starts
+	if (sf::Joystick::isConnected(0))
+		std::cout << "Joystick 1 is connected" << std::endl;
+	else
+		std::cout << "Joystick 1 is disconnected" << std::endl;
 
+	//Gets number of buttons on controller
+	int buttonCount = sf::Joystick::getButtonCount(0);
+	std::cout << "Number of controller buttons: " << buttonCount << std::endl;
+
+	//Check if controller has axis
+	bool hasAxis = sf::Joystick::hasAxis(0, sf::Joystick::Z);
 
 	//Update loop
 	while (window.isOpen())
@@ -164,9 +177,46 @@ int main()
 			playerSprite.move(-0.1, 0);
 		}
 
+		sf::Vector2f moveSpeed(sf::Joystick::getAxisPosition(0, sf::Joystick::X), sf::Joystick::getAxisPosition(0, sf::Joystick::Y));
+
+		if (moveSpeed.x > 0)
+			source.y = Right;
+		else if (moveSpeed.x < 0)
+			source.y = Left;
+		else if (moveSpeed.y < 0)
+			source.y = Up;
+		else if (moveSpeed.y > 0)
+			source.y = Down;
+
+		playerSprite.move(moveSpeed.x * clock.getElapsedTime().asSeconds(), moveSpeed.y * clock.getElapsedTime().asSeconds());
+		
+
+		//Gets actual position in window. Without parameter, mouse position for the monitor
+		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+		//Sets a fixed position for mouse in window
+		//sf::Mouse::setPosition(sf::Vector2i(100, 100), window);
+
+		std::cout << "X: " << mousePosition.x << "Y: " << mousePosition.y << std::endl;
+
+		//Live mouse input
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			updateFrame = true;
+		else if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+			updateFrame = false;
+
+		//Same as above for controller
+		if (sf::Joystick::isButtonPressed(0, 1))
+			updateFrame = true;
+		else if (sf::Joystick::isButtonPressed(0, 2))
+			updateFrame = false;
+
+		//Starts sprite animation
+		if (updateFrame)
+			frameCounter += frameSpeed * clock.restart().asSeconds();
+		else
+			frameCounter = 0;
 		
 		//Change speed of animation
-		frameCounter += frameSpeed * clock.restart().asSeconds();
 		if (frameCounter >= switchFrame)
 		{
 			frameCounter = 0;
