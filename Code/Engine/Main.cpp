@@ -4,7 +4,7 @@
 
 int main()
 {
-	enum Direction { Down, Left, Right, Up };
+	enum Direction { Right, Left, Down, Up };
 
 	sf::Vector2i source(1, Down);
 
@@ -31,7 +31,7 @@ int main()
 	//Images and Sprites
 	sf::Texture playerTexture;
 	//Loads in spritemap
-	if (!playerTexture.loadFromFile("Monsters1.png"))
+	if (!playerTexture.loadFromFile("Monsters4.png"))
 		std::cout << "Error: Could not load Player Image" << std::endl;
 
 	sf::Sprite playerSprite;
@@ -165,7 +165,15 @@ int main()
 		}
 
 		
-
+		//Change speed of animation
+		frameCounter += frameSpeed * clock.restart().asSeconds();
+		if (frameCounter >= switchFrame)
+		{
+			frameCounter = 0;
+			source.x++;
+			if (source.x * 32 >= playerTexture.getSize().x)
+				source.x = 0;
+		}
 
 
 		//Wait for an event to happen
