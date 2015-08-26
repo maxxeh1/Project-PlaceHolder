@@ -1,14 +1,21 @@
 #include <SFML\Graphics.hpp>
 #include <iostream>
 #include <string>
+#include <ctime>
+#include <cstdlib>
+
 
 int main()
 {
 	enum Direction { Right, Left, Down, Up };
 
+	sf::Vector2i blockDimensions(10, 10);
+
 	sf::Vector2i source(1, Down);
 
 	float frameCounter = 0, switchFrame = 100, frameSpeed = 500;
+
+	srand(time(0));
 
 	sf::RenderWindow window; 
 	//2D Array Vector
@@ -28,7 +35,18 @@ int main()
 	int index = 0;
 
 	//Stops key repeat when holding down
-	window.setKeyRepeatEnabled(false);
+	//window.setKeyRepeatEnabled(false);
+	
+	//Load in a font type
+	sf::Font font;
+	if (!font.loadFromFile("modern.fon"))
+		std::cout << "Can't find font file" << std::endl;
+
+	//Make a string, load into text, and do things with text
+	sf::String sentence;
+	sf::Text text(sentence, font, 40);
+	text.setColor(sf::Color(44, 127, 255));
+	text.setStyle(sf::Text::Bold | sf::Text::Underlined);
 
 	//Images and Sprites
 	sf::Texture playerTexture;
@@ -104,6 +122,7 @@ int main()
 					else if (evt.key.code == sf::Keyboard::Left)
 						source.y = Left;
 					break;*/
+
 
 				//Text Events (Letters Keyboard)
 				case sf::Event::TextEntered:
@@ -225,6 +244,35 @@ int main()
 				source.x = 0;
 		}
 
+		//Vertex Arrays are geometry objects
+		/*for (int i = 0; i < windowSize.x / blockDimensions.x; i++)
+		{
+			for (int j = 0; j < windowSize.y / blockDimensions.y; j++)
+			{
+				sf::VertexArray vArray(sf::PrimitiveType::LinesStrip, 4);
+				vArray[0].position = sf::Vector2f(i * blockDimensions.x, j * blockDimensions.y);
+				vArray[1].position = sf::Vector2f(i * blockDimensions.x + blockDimensions.x, j * blockDimensions.y + blockDimensions.y);
+				vArray[2].position = sf::Vector2f(i * blockDimensions.x + blockDimensions.x, j * blockDimensions.y + blockDimensions.y);
+				vArray[3].position = sf::Vector2f(i * blockDimensions.x, j * blockDimensions.y + blockDimensions.y);
+
+				for (int k = 0; k < 4; k++)
+				{
+					int red = rand() % 255;
+					int green = rand() % 255;
+					int blue = rand() % 255;
+
+					vArray[k].color = sf::Color(red, green, blue);
+				}
+				window.draw(vArray);
+			}
+		}*/
+
+		sf::RectangleShape rect(sf::Vector2f(100, 100)); 
+		rect.setFillColor(sf::Color(255, 0, 0, 255));
+		rect.setOutlineColor(sf::Color::Blue); 
+		rect.setOutlineThickness(2.0f);
+		rect.setPosition(sf::Vector2f(20, 20));
+		rect.setTexture(&playerTexture);
 
 		//Wait for an event to happen
 		/*if (window.waitEvent(evt))
@@ -243,6 +291,7 @@ int main()
 		window.clear();
 		//Draw to screen
 		window.draw(playerSprite);
+		window.draw(rect);
 		//Update window
 		window.display();
 		
