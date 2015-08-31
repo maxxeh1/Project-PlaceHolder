@@ -1,5 +1,3 @@
-# RPG
-Project - Alpha
+# Project PlaceHolder
 
-
-©Copyright, Kyle Freer and Max Atkins, 2015
+Â©Copyright, Kyle Freer and Max Atkins, 2015
