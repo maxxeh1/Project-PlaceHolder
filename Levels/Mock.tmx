@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" name="Monsters1" tilewidth="32" tileheight="32">
-  <image source="../Graphics/Sprites/Other/Monsters1.png" width="320" height="320"/>
+  <image source="../Graphics/Sprites/Other/Monsters1.png" width="192" height="128"/>
  </tileset>
- <tileset firstgid="101" name="Terrain-1" tilewidth="32" tileheight="32">
+ <tileset firstgid="25" name="Terrain-1" tilewidth="32" tileheight="32">
   <image source="../Graphics/TileSets/Terrain-1.png" width="640" height="640"/>
  </tileset>
  <layer name="Tile Layer 1" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxLZWBgSB1GOA2KydU70O4fahgAZbA41A==
+   eJyTZGBgkBxGWAqKydU70O4fahgA9VEOFA==
   </data>
  </layer>
  <layer name="Tile Layer 5" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYECAewykgdN48Ck86rEBWqoXJVL9KSQ+NdRvJVE9OiBV/UAAAG1VHJM=
+   eJxjYECASQykgXo8uA6PemyAlup5iVRfh8SnhvpMEtWjA1LVDwQAAK5kEds=
   </data>
  </layer>
  <layer name="Tile Layer 2" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBjcoA+Ie7Hgfhzqq4C4EguuHiLqFwLxIix4MQ71Aw0Ar/UVlQ==
+   eJxjYBjcwAmIHbFgZxzq9YBYFwvWHyLqQ4E4DAsOx6F+oAEA2gMJHQ==
   </data>
  </layer>
  <layer name="Tile Layer 6" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYEAF9/BgfICQ/FAAp4D45BBWPxAAAHiEDT0=
+   eJxjYEAFk/BgfICQ/FAAdUBcO4TVDwQAAEPrCH0=
   </data>
  </layer>
  <layer name="Tile Layer 3" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFyKAPiHuBuJ9I9VVAXAnE1YNE/UIgXgTEi4lUTykAAC26B9s=
+   eJxjYBgFyMAJiB2B2JlI9XpArAvE+oNEfSgQhwFxOJHqKQUAoQ4DZw==
   </data>
  </layer>
  <layer name="Tile Layer 4" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYKAMZABxJhachUN9DRCnYsF1FLqDkPtwuWcUUAYAf4gHDg==
+   eJxjYKAMyACxLBYsh0O9ARBLYsFGFLqDkPtwuWcUUAYAjrECAg==
   </data>
  </layer>
  <layer name="Tile Layer 7" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBj+QHSgHTCMAQAezAAW
+   eJxjYBj+gHegHTCMAQAT7AAO
+  </data>
+ </layer>
+ <layer name="Tile Layer 8" width="12" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcwAeIlYHYl0i1KlD1qgT0wNQiq8enRwWHelUC6tWQMD71anjwQKgnFgAArCkIMA==
+  </data>
+ </layer>
+ <layer name="Tile Layer 9" width="12" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgKGRAAGQ2MQCkvgCL3iIs7EIs6vCJk+IGHyBWRhMH8X1xmK2CQ70qDrfB5NHV4wMgeQso2xKLemSzLRiwA0ssYuSGEy5QjESbYsEKUMyARQ4APIUM8Q==
   </data>
  </layer>
 </map>
